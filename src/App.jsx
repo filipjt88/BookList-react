@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const books = [
   {
     id: 1,
-    title: 'Python intenzivni kurs, prevod 3. izdanja',
+    title: 'Python intenzivni kurs',
     author: 'Eric Matthes',
     img: 'https://kombib.rs/images/566%20Python%20intezivni%20kurs.png',
     price: '2100 rsd',
@@ -58,7 +58,45 @@ const books = [
   },
 ];
 const App = () => {
-  return <h1>Hello</h1>;
+  return (
+    <>
+      <div className="container">
+        <div className="row">
+          <h1 className="text-center mt-5">Books</h1>
+          {books.map((book) => {
+            return <Book {...book} key={book.id} />;
+          })}
+        </div>
+      </div>
+    </>
+  );
+};
+
+const Book = (props) => {
+  console.log(props);
+  const { title, author, img, price, description } = props;
+  return (
+    <>
+      <div className="col-md-3">
+        <div className="card">
+          <div className="card-body">
+            <img src={img} className="img-fluid" alt={title} />
+          </div>
+          <div className="card-footer">
+            <h6>{title.toUpperCase()}</h6>
+            <h5>{author}</h5>
+            <p>{description.substring(0, 100)}</p>
+            <p>{price}</p>
+          </div>
+        </div>
+      </div>
+    </>
+  );
 };
 
 export default App;
+//  <img src={img} alt={title} />
+//     <h2>{title}</h2>
+//     <h4>{author}</h4>
+//     <h5>{price}</h5>
+//     <p>{description}</p>
