@@ -95,8 +95,3 @@ const Book = (props) => {
 };
 
 export default App;
-//  <img src={img} alt={title} />
-//     <h2>{title}</h2>
-//     <h4>{author}</h4>
-//     <h5>{price}</h5>
-//     <p>{description}</p>
